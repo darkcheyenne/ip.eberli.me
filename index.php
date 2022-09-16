@@ -1,7 +1,7 @@
 <html>
  <head>
   <title>Your IP</title>
-  <script async defer data-website-id="2c1570de-1161-49b7-b10d-57d5442fe5eb" src="http://100.104.98.67:3000/umami.js"></script>
+  <script async defer data-website-id="2c1570de-1161-49b7-b10d-57d5442fe5eb" src="https://umami.eberli.me/umami.js"></script>
  </head>
  <body>
  <?php 
