@@ -6,8 +6,6 @@ name: Docker
 # documentation.
 
 on:
-  schedule:
-    - cron: '31 7 * * *'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
@@ -20,6 +18,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  VERSION: v1
 
 
 jobs:
@@ -76,7 +75,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}, ghcr.io/darkcheyenne/ip.eberli.me:${{ env.VERSION }}
           labels: ${{ steps.meta.outputs.labels }}
 
       # Sign the resulting Docker image digest except on PRs.
